@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Education</title>
+        <link rel= "stylesheet" href="static/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class= "nav">
+          <a class = "active" href="{{url_for('index')}}">Home</a>
+          <a href = "{{url_for('education')}}">Education</a>
+          <a href ="{{url_for('experience')}}">Experience</a>
+          <a href ="{{url_for('contact')}}">Contact</a>
+        </div>
+        <table>
+            <tr>
+              <th>
+                <p>Education</p>
+              </th>
+              <th>
+                <p>Relevant Experience</p>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <p>Emory University - Class of 2021 - Computer Science and Mathematics Major</p>
+              </td>
+              <td>
+                <ul>
+                  <li>Relevant Classes Taken: Physics 151, Calculus 2, Principles of Microeconomics, History of Mathematics, Physics 152:
+Electricity and Magnetism, Differential Equations, Principles of Macroeconomics, Intro to Computer Science I & II, Linear
+Algebra, Numerical Analysis, Multivariable Calculus, Digital Electronics.</li>
+                  <li>Honors & Awards: Merit List, Dan C. Moore Award, Orbital ATK Award, Alpha Epsilon Upsilon.</li>
+                </ul>
+              </td>
+            </tr>
+        </table>
+    </body>
+</html>
