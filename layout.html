@@ -1,0 +1,22 @@
+<!-- overall layout template for other HTML files to inherit -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>   <!-- placeholder for title block -->
+        <link rel= "stylesheet" href="static/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div class= "nav">
+          <a class = "active" href="{{url_for('index')}}">Home</a>
+          <a href = "{{url_for('education')}}">Education</a>
+          <a href ="{{url_for('experience')}}">Experience</a>
+          <a href ="{{url_for('contact')}}">Contact</a>
+        </div>
+
+        {% block body %} <!-- placeholder for body block -->
+        {% endblock %}
+    </body>
+</html>

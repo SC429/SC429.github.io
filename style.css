@@ -8,7 +8,7 @@
   text-align: center;
   color: black;
   font-weight: bold;
-  padding: 15px;
+  padding: 5px;
   font-size: 50px;
 }
 #contact{
@@ -29,15 +29,15 @@
 }
 .nav a {
   color: #f2f2f2;
-  font-size: 25px;
-  padding: 10px;
+  font-size: 30px;
+  padding: 5px;
 }
 .nav a:hover {
   background-color:#54bab0;
   opacity: .5;
 }
 body {
-  background-image: url('background.jpg');
+  background-image: url('static/background.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -83,9 +83,23 @@ table p{
   opacity: .9;
 }
 
-#thank {
+.thanks {
   font-size: 30px;
   background-color: white;
   padding: 30px;
   opacity: .9;
+}
+
+.comment{
+    text-align: center;
+    font-size: 20px;
+    background-color: white;
+    opacity: .9;
+}
+
+form {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 20px;
+  padding-bottom: 20px;
 }

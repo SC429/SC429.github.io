@@ -1,0 +1,19 @@
+{% extends "layout.html" %}   <!-- Django templating syntax, need to download Django if wanted to use extending template -->
+
+{% block title %}
+  Thank you!
+{% endblock %}
+
+{% block body %}
+  <div class="thanks">
+    <h1>Thank you for leaving your contact info! I will contact you shortly.</h1>
+
+    <h1>In the meantime, feel free to check out my LinkedIn and GitHub, which can be found in the contact page.</h1>
+  </div>
+
+  <form action="{{url_for('contact')}}" method="GET">
+    <div class="form-group">
+      <button class="btn btn-primary">Go to Contact page</button>
+    </div>
+  </form>
+{% endblock %}
