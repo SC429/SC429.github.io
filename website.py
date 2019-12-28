@@ -10,12 +10,11 @@ app.config["SESSION_PERMANENT"]=False
 app.config["SESSION_TYPE"]="filesystem"
 Session(app)
 
-engine = create_engine(os.getenv("URL_FOR_DATABASE")) #can use any database by inserting the URL in the URL_FOR_DATABASE, will need to insert a database link for program to work
-db = scoped_session(sessionmaker(bind=engine))
+engine = create_engine('postgres://ehqnnhaxklfutw:28e7fb579f4bfc92d4039dcd34e693c689b57b211ea60b78240e3018f30c6940@ec2-174-129-33-30.compute-1.amazonaws.com:5432/dab40c5k7lkmt8')
+db = engine.connect()
 
 @app.route('/')
 def index():
-    db.execute("CREATE TABLE contact_info (id SERIAL PRIMARY KEY, fname VARCHAR NOT NULL, lname VARCHAR NOT NULL, email VARCHAR NOT NULL);")
     return render_template('home.html')
 
 @app.route('/education')
@@ -35,12 +34,15 @@ def thankyou():
     fname = request.form.get("fname")
     lname = request.form.get("lname")
     email = request.form.get("email")
+    db.execute("INSERT INTO contact_info (fname, lname, email) VALUES (%s, %s, %s)", (fname, lname, email))
+    return render_template('complete.html', fname = fname)
 
-    db.execute("INSERT INTO contact_info (fname, lname, email) VALUES (:fname, :lname, :email)",
-        {"fname": fname, "lname": lname, "email": email})
-    db.commit()
-
-    return render_template('complete.html')
+@app.route('/data', methods=["POST"])
+def data():
+    data = db.execute("SELECT fname, lname, email FROM contact_info").fetchall()
+    for entry in data:
+        print(f"{entry.fname} {entry.lname} {entry.email}")  #prints onto command prompt
+    return index()
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
