@@ -39,10 +39,15 @@ def thankyou():
 
 @app.route('/data', methods=["POST"])
 def data():
-    data = db.execute("SELECT fname, lname, email FROM contact_info").fetchall()
-    for entry in data:
-        print(f"{entry.fname} {entry.lname} {entry.email}")  #prints onto command prompt
-    return index()
+    code = request.form.get("password-admin")
+    if code == "1234":
+        data = db.execute("SELECT fname, lname, email FROM contact_info").fetchall()
+        for entry in data:
+            print(f"{entry.fname} {entry.lname} {entry.email}")  #prints onto command prompt
+        return index()
+    else:
+        return index()
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
