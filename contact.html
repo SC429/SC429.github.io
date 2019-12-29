@@ -22,9 +22,9 @@ Contact
         <form action="{{url_for('thankyou')}}" method="post">
 
           <div class = "form-group">
-            <input class = "form" name="fname" placeholder="First Name">
-            <input class="form" name="lname" placeholder="Last Name">
-            <input class="email" name="email" placeholder="Email">
+            <input type="text" required class = "form" name="fname" placeholder="First Name">
+            <input type="text" required class="form" name="lname" placeholder="Last Name">
+            <input type="email" required class="form" name="email" placeholder="Email">
           </div>
 
           <select class="form-control" name="inquiries">
