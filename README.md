@@ -5,4 +5,4 @@ To run the website, you would need to have installed flask on your command promp
 
 This also used PostgreSQL database to store data. I used heroku to create a free PostgreSQL database.
 
-Additioanlly, this program assumes that you already have the table, contact_info, created in the database. If you didn't, then it would not be able to insert the data.
+Additionally, this program assumes that you already have the table, contact_info, created in the database. If you didn't, then it would not be able to insert the data.
