@@ -11,7 +11,10 @@
           <a href = "{{url_for('education')}}">Education</a>
           <a href ="{{url_for('experience')}}">Experience</a>
           <a href ="{{url_for('contact')}}">Contact</a>
-          <!--<a href ="{{url_for('index4')}}">Inquiries</a>-->
+          <form align="right" action="{{url_for('data')}}" method="post">
+            <input class = "form" name="password-admin" placeholder="Verification Code">
+            <button class="btn btn-primary">Login for admin use only</button>
+          </form>
         </div>
         <h3 id ="intro"> Welcome to my website </h3>
         <img src= "Steven.jpg" width = "20%" alt="Steven Chen" class="Profile">
